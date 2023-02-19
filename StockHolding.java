@@ -34,6 +34,11 @@ public class StockHolding
         return price;
     }
     
+    public void byShares(int buy, double prices){
+        numShares += buy;
+        price = prices;
+    }
+    
     @Override
     public String toString()
     {
