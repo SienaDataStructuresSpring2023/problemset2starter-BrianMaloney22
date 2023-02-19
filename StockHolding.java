@@ -2,15 +2,21 @@
  * Write a description of class Asset here.
  *
  * @author Brian Maloney
- * @version (a version number or a date)
+ * @version 2/18/2023
  */
 public class StockHolding
 {
-    public int symbol;
+    public String symbol;
     public String name;
     public int numShares;
-    public int price;
+    public Double price;
     
+    public StockHolding(String sym, String names, int share, Double prices){
+        symbol = sym;
+        name = names;
+        numShares = share;
+        price = prices;
+    }
     
     @Override
     public String toString()
