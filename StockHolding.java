@@ -18,6 +18,22 @@ public class StockHolding
         price = prices;
     }
     
+    public String getSymbol(){
+        return symbol;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public int getShares(){
+        return numShares;
+    }
+    
+    public Double getPrice(){
+        return price;
+    }
+    
     @Override
     public String toString()
     {
