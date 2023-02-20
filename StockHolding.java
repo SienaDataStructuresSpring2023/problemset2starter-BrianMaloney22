@@ -35,8 +35,16 @@ public class StockHolding
     }
     
     public void byShares(int buy, double prices){
-        numShares += buy;
+        numShares = buy;
         price = prices;
+    }
+    
+    public double sellShares(int sell){
+        double money = 0;
+        if(numShares >= sell){
+            money = sell * price;
+        }
+        return money;
     }
     
     @Override
