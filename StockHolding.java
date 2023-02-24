@@ -62,7 +62,7 @@ public class StockHolding
      * @param the price per share.
      */
     public void buyShares(int buy, double prices){
-        numShares = buy;
+        numShares += buy;
         price = prices;
     }
 
@@ -76,11 +76,11 @@ public class StockHolding
      * @return the dollar amount resulting from the sale of the shares.
      */
     public double sellShares(int sell){
-        double money = 0;
         if(numShares >= sell){
-            money = sell * price;
+            numShares -= sell;
+            return sell * price;
         }
-        return money;
+        return 0;
     }
 
     /**
