@@ -1,5 +1,6 @@
 /**
- * Write a description of class Asset here.
+ * This class handels the individual stocks along with buying 
+ * and selling shares.
  *
  * @author Brian Maloney
  * @version 2/18/2023
