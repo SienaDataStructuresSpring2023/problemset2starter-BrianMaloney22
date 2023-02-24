@@ -57,6 +57,14 @@ public class Portfolio
         return stocks[getIndex(symbol)].sellShares(sell);
     }
     
+    public int getCurrentValue(){
+        int total = 0;
+        for(int i = 0; i < stocks.length; i++){
+            total += stocks[i].getPrice() * stocks[i].getShares();
+        }
+        return total;
+    }
+    
     @Override
     public String toString()
     {
