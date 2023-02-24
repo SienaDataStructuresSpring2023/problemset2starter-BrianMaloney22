@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Write a description of class Portfolio here.
@@ -34,6 +35,26 @@ public class Portfolio
             }
         }
         return -1;
+    }
+    
+    public double buyStock(String symbol, String name, int buy, double price){
+        if(getIndex(symbol) != -1){
+            stocks[getIndex(symbol)].buyShares(buy, price);
+        } else {
+            //stocks.add(symbol);
+        }
+        return (buy * price);
+    }
+    
+    public double sellStock(String symbol, int sell){
+        if(getIndex(symbol) != -1){
+            if(stocks[getIndex(symbol)].sellShares(sell) == 0){
+                stocks[getIndex(symbol)] = null;;
+            } else {
+                stocks[getIndex(symbol)].sellShares(sell);
+            }
+        }
+        return stocks[getIndex(symbol)].sellShares(sell);
     }
     
     @Override
