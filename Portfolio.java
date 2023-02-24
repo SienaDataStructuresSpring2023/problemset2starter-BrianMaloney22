@@ -1,12 +1,23 @@
+import java.util.ArrayList;
 
 /**
  * Write a description of class Portfolio here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Brian Maloney
+ * @version 2/20/2023
  */
+
 public class Portfolio
 {
+    private ArrayList [] StockHolding;
+    private int investment;
+    private int payout;
+    
+    public Portfolio(){
+        investment = 0;
+        payout = 0;
+        StockHolding = new ArrayList [5];
+    }
     // @Override
     // public String toString()
     // {
