@@ -89,15 +89,16 @@ public class Portfolio
      * @return the payout from selling this input number of shares of the input stock.
      */
     public double sellStock(String symbol, int sell){
+        int index = getIndex(symbol);
+        double gain = 0.0;
         if(getIndex(symbol) != -1){
-            if(stocks.get(getIndex(symbol)).sellShares(sell) == 0){
+            gain = stocks.get(getIndex(symbol)).sellShares(sell);
+            if(stocks.get(getIndex(symbol)).getShares() - sell == 0){
                 stocks.remove(getIndex(symbol));
-            } else {
-                stocks.get(getIndex(symbol)).sellShares(sell);
             }
         }
-        payout += stocks.get(getIndex(symbol)).sellShares(sell);
-        return stocks.get(getIndex(symbol)).sellShares(sell);
+        payout += gain;
+        return gain;
     }
 
     /**
