@@ -8,8 +8,8 @@ import java.io.FileNotFoundException;
  * accordingly.  Then, this program prints the portfolio report
  * as described in the problem set 2 instructions.
  *
- * @author 
- * @version 
+ * @author Brian Maloney
+ * @version 2/24/2023
  */
 public class PortfolioReport
 {
@@ -32,10 +32,12 @@ public class PortfolioReport
             if(data[0].equals("B")){
                 //Buy the stock for the portfolio.
                 //YOUR CODE HERE.
-                p.buyStock("SQ", "Block", 25, 79.12);
+                data[3] = data[3].replaceAll("\\s+","");
+                p.buyStock(data[1], data[2], Integer.valueOf(data[3]), Double.parseDouble(data[4]));
             } else {
                 //Sell the stock from the portfolio.
-                p.sellStock("SQ", 25);
+                data[2] = data[2].replaceAll("\\s+","");
+                p.sellStock(data[1], Integer.parseInt(data[2]));
             }
         }
 
